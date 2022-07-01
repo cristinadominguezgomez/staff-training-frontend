@@ -8,7 +8,7 @@ import { HomePage } from "./pages/HomePage";
 import { ExercisesPage } from "./pages/ExercisesPage";
 import { ExercisePage } from "./pages/ExercisePage";
 import { RegisterPage } from "./pages/RegisterPage";
-import { LoginPage } from "./pages/LoginPage";
+import { LoginPage } from "./pages/LoginPage"
 import { NotFoundPage } from "./pages/NotFoundPage";
 
 function App() {
