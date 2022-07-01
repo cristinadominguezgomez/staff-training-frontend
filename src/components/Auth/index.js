@@ -5,10 +5,19 @@ export const Auth = () => {
   const { employee, logout } = useEmployeeTokenContext();
 
   return employee ? (
-    <section>
-      Logged in as <Link to={`/employee/${employee.id}`}>{employee.email}</Link>{" "}
-      <button onClick={() => logout()}>Logout</button>
-    </section>
+    <ul>
+      <li>
+        <Link to="/create/exercises">Create New Exercise</Link>
+      </li>
+
+      <li>
+        <p>
+          Logged in as {""}
+          <Link to={`/employee/${employee.id}`}>{employee.email}</Link>
+        </p>{" "}
+        <button onClick={() => logout()}>Logout</button>
+      </li>
+    </ul>
   ) : (
     <ul>
       <li>
