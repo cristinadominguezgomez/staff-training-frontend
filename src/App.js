@@ -8,7 +8,8 @@ import { HomePage } from "./pages/HomePage";
 import { ExercisesPage } from "./pages/ExercisesPage";
 import { ExercisePage } from "./pages/ExercisePage";
 import { RegisterPage } from "./pages/RegisterPage";
-import { LoginPage } from "./pages/LoginPage"
+import { LoginPage } from "./pages/LoginPage";
+import { CreateExercisePage } from "./pages/CreateExercisePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         <Route path="/exercise/:id" element={<ExercisePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-
+        <Route path="/create/exercises" element={<CreateExercisePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
