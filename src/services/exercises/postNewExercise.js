@@ -1,17 +1,10 @@
-export const newExercise = async ({
-  title,
-  description,
-  type,
-  muscle_group,
-  token,
-}) => {
+export const newExercise = async ({ dataForm, token }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/exercises`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ title, description, type, muscle_group }),
+    body: dataForm,
   });
 
   const body = await response.json();
