@@ -12,6 +12,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { CreateExercisePage } from "./pages/CreateExercisePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { EmployeeDetail } from "./components/EmployeeDetail";
+import { ProfilePage } from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route path="/exercise/:id" element={<ExercisePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        {/* <Route path="/profile" element={<ProfilePage />} /> */}
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/employees/:id" element={<EmployeeDetail />} />
         <Route path="/create/exercises" element={<CreateExercisePage />} />
         <Route path="*" element={<NotFoundPage />} />
