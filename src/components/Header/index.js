@@ -9,7 +9,14 @@ export const Header = () => {
       </h1>
       <nav>
         <Auth />
-        <Link to="/exercises">Ver ejercicios</Link>
+        <ul>
+          <li>
+            <Link to="/exercises">Ver ejercicios</Link>
+          </li>
+          <li>
+            <Link to="/profile">profile</Link>
+          </li>
+        </ul>
       </nav>
     </header>
   );
