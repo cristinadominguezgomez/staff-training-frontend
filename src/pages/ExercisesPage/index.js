@@ -2,7 +2,8 @@ import { ExercisesList } from "../../components/ExercisesList";
 import useExercises from "../../hooks/useExercises";
 
 export const ExercisesPage = () => {
-  const { exercises, loading, error } = useExercises();
+  const { exercises, loading, error, removeExercise } = useExercises();
+
   if (loading) return <p>Cargando exercises...</p>;
 
   if (error) return <p>{error}</p>;
@@ -10,7 +11,7 @@ export const ExercisesPage = () => {
   return (
     <section>
       <h1>Exercises Page</h1>
-      <ExercisesList exercises={exercises} />
+      <ExercisesList exercises={exercises} removeExercise={removeExercise} />
     </section>
   );
 };

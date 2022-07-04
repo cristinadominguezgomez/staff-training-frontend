@@ -7,10 +7,6 @@ export const Auth = () => {
   return employee ? (
     <ul>
       <li>
-        <Link to="/create/exercises">Create New Exercise</Link>
-      </li>
-
-      <li>
         <p>
           Logged in as {""}
           <Link to={`/employee/${employee.id}`}>{employee.email}</Link>
