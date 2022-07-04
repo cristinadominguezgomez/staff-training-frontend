@@ -22,7 +22,11 @@ const useExercises = () => {
     loadExercises();
   }, []);
 
-  return { exercises, loading, error };
+  const removeExercise = (id) => {
+    setExercises(exercises.filter((exercise) => exercise.id !== id));
+  };
+
+  return { exercises, loading, error, removeExercise };
 };
 
 export default useExercises;
