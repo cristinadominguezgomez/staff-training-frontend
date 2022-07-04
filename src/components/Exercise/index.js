@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
-import { deleteExerciseService } from "../../services/exercises/deleteExercise";
+import { deleteExerciseService } from "../../services/exercises/deleteExerciseService";
 
 export const Exercise = ({ exercise, removeExercise }) => {
   const { title, description, type, created_at, muscle_group, image } =
@@ -40,9 +40,16 @@ export const Exercise = ({ exercise, removeExercise }) => {
           <p>Created on: {new Date(created_at).toLocaleDateString()}</p>
         </article>
         {employee && employee.role === "admin" ? (
-          <button onClick={() => deleteExercise(exercise.id)}>
-            DELETE EXERCISE
-          </button>
+          <div>
+            <button onClick={() => deleteExercise(exercise.id)}>
+              DELETE EXERCISE
+            </button>
+            <Link to={`/exercises/${exercise.id}/edit`}>
+              <button>
+                EDIT EXERCISE
+              </button>
+            </Link>
+          </div>
         ) : null}
         {error ? <p>{error}</p> : null}
       </>

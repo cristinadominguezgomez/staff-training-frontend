@@ -15,3 +15,4 @@ export const deleteExerciseService = async ({ id, token }) => {
     throw new Error(json.message);
   }
 };
+

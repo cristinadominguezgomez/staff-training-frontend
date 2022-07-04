@@ -9,6 +9,7 @@ import { ExercisesPage } from "./pages/ExercisesPage";
 import { ExercisePage } from "./pages/ExercisePage";
 import { RegisterPage } from "./pages/RegisterPage";
 import { LoginPage } from "./pages/LoginPage";
+import { EditExercisePage } from "./pages/EditExercisePage";
 import { CreateExercisePage } from "./pages/CreateExercisePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { EmployeeDetail } from "./components/EmployeeDetail";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/exercises" element={<ExercisesPage />} />
         <Route path="/exercise/:id" element={<ExercisePage />} />
+        <Route path="/exercises/:id/edit" element={<EditExercisePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
