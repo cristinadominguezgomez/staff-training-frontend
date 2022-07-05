@@ -18,7 +18,10 @@ export const EmployeeDetail = () => {
         <p>Employee id: {employee.id}</p>
         <p>Registered on {new Date(employee.created_at).toLocaleString()}</p>
         {avatar ? (
-          <img src={`${process.env.REACT_APP_BACKEND}/${avatar}`} alt={employee.name} />
+          <img
+            src={`${process.env.REACT_APP_BACKEND}/${avatar}`}
+            alt={employee.name}
+          />
         ) : null}
       </section>
     </section>

@@ -9,7 +9,6 @@ export const EditExerciseForm = ({ id }) => {
   const navigate = useNavigate();
 
   const { token, employee } = useContext(EmployeeTokenContext);
-  const { role } = employee;
   const [exerciseData, setExerciseData] = useState({
     title: "",
     description: "",
@@ -28,7 +27,7 @@ export const EditExerciseForm = ({ id }) => {
           description: data.description || "",
           type: data.type || "",
           muscle_group: data.muscle_group || "",
-          image: `${process.env.REACT_APP_BACKEND}/${data.image}` || "",
+          image: data.image ? `${process.env.REACT_APP_BACKEND}/${data.image}`: "",
         });
       } catch (error) {
         setError("ha habido un error en la peticion");
@@ -70,7 +69,7 @@ export const EditExerciseForm = ({ id }) => {
     }
   };
 
-  return employee && role === "admin" ? (
+  return employee && employee.role === "admin" ? (
     <form onSubmit={handleSubmit}>
       <fieldset>
         <label htmlFor="title">Title:</label>
@@ -120,12 +119,14 @@ export const EditExerciseForm = ({ id }) => {
           type="file"
           onChange={handleInputChange}
         />
-        <img
-          width={50}
-          heigth={50}
-          src={exerciseData.image}
-          alt={exerciseData.title}
-        />
+        {exerciseData.image ? (
+          <img
+            width={50}
+            heigth={50}
+            src={exerciseData.image}
+            alt={exerciseData.title}
+          />
+        ) : null}
       </fieldset>
 
       <button type="submit">Edit Exercise</button>
