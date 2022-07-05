@@ -9,6 +9,7 @@ export const EditExerciseForm = ({ id }) => {
   const navigate = useNavigate();
 
   const { token, employee } = useContext(EmployeeTokenContext);
+  const { role } = employee;
   const [exerciseData, setExerciseData] = useState({
     title: "",
     description: "",
@@ -35,7 +36,6 @@ export const EditExerciseForm = ({ id }) => {
     };
     getExercise();
   }, [id]);
-
 
   const handleInputChange = (e) => {
     const { name, type, value } = e.target;
@@ -70,7 +70,7 @@ export const EditExerciseForm = ({ id }) => {
     }
   };
 
-  return employee ? (
+  return employee && role === "admin" ? (
     <form onSubmit={handleSubmit}>
       <fieldset>
         <label htmlFor="title">Title:</label>
@@ -131,6 +131,7 @@ export const EditExerciseForm = ({ id }) => {
       <button type="submit">Edit Exercise</button>
       {error ? <p>{error}</p> : null}
     </form>
-  ) : <Link to={"/login"}>Logeate</Link>;
-  
+  ) : (
+    <Link to={"/login"}>Logeate</Link>
+  );
 };
