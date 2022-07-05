@@ -45,9 +45,7 @@ export const Exercise = ({ exercise, removeExercise }) => {
               DELETE EXERCISE
             </button>
             <Link to={`/exercises/${exercise.id}/edit`}>
-              <button>
-                EDIT EXERCISE
-              </button>
+              <button>EDIT EXERCISE</button>
             </Link>
           </div>
         ) : null}
