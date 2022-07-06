@@ -1,20 +1,18 @@
 import { Employee } from "../Employee";
+import { Link } from "react-router-dom";
 
 export const EmployeesList = ({ employees }) => {
-  console.log("employees", employees);
-  return employees && employees.length > 0 ? (
+  return employees.length ? (
     <ul>
       {employees.map((employee) => (
-        <li>
-          {employees.map((employee) => (
-            <li key={employee.id}>
-              <Employee employee={employee} />
-            </li>
-          ))}
+        <li key={employee.id}>
+          <Link to={`/employee/${employee.id}`}>
+            <Employee employee={employee} />
+          </Link>
         </li>
       ))}
     </ul>
   ) : (
-    <p>There are no employees yet...</p>
+    <p>No hay empleados todavia...</p>
   );
 };
