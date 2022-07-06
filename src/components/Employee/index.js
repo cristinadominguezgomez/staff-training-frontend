@@ -15,12 +15,10 @@ export const Employee = ({ employee }) => {
       <p>Created on: {new Date(created_at).toLocaleDateString()}</p>
       <p>Active: {active}</p>
 
-      {employee && role === "admin" ? (
-        <section>
-          {/* <button>Delete employee</button> */}
-          {error ? <p>{error}</p> : null}
-        </section>
-      ) : null}
+      <section>
+        {/* <button>Delete employee</button> */}
+        {error ? <p>{error}</p> : null}
+      </section>
     </article>
   );
 };

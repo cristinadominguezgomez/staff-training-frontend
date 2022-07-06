@@ -2,7 +2,6 @@ import { Employee } from "../Employee";
 import { Link } from "react-router-dom";
 
 export const EmployeesList = ({ employees }) => {
-  console.log("employees", employees);
   return employees.length ? (
     <ul>
       {employees.map((employee) => (
