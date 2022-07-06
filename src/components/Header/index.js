@@ -19,12 +19,17 @@ export const Header = () => {
           <li>
             <Link to="/exercises">Ver ejercicios</Link>
           </li>
-          {employee && employee.role === "admin" ? (
+        </ul>
+        {employee && employee.role === "admin" ? (
+          <ul>
             <li>
               <Link to="/create/exercises">Create New Exercise</Link>
             </li>
-          ) : null}
-        </ul>
+            <li>
+              <Link to="/employees">Listado empleados</Link>
+            </li>
+          </ul>
+        ) : null}
       </nav>
     </header>
   );

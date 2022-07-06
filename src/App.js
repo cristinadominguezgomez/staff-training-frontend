@@ -14,6 +14,7 @@ import { CreateExercisePage } from "./pages/CreateExercisePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { EmployeeDetail } from "./components/EmployeeDetail";
 import { ProfilePage } from "./pages/ProfilePage";
+import { EmployeesPage } from "./pages/EmployeesPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/employees/:id" element={<EmployeeDetail />} />
         <Route path="/create/exercises" element={<CreateExercisePage />} />
+        <Route path="/employees" element={<EmployeesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
