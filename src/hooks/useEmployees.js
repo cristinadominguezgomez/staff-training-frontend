@@ -11,10 +11,8 @@ const useEmployees = () => {
       try {
         setLoading(true);
         const data = await getAllEmployeesService();
-        console.log("data", data);
         setEmployees(data);
       } catch (error) {
-        console.log(error.message);
         setError(error.message);
       } finally {
         setLoading(false);

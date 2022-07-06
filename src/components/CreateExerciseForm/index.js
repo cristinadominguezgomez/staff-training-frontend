@@ -21,7 +21,7 @@ export const CreateExerciseForm = () => {
         dataForm,
         token,
       });
-      console.log(exercise);
+
       //me redireccione a la pagina del ejercicio creado (por su id)
       navigate(`/exercise/${exercise.id}`);
     } catch (error) {

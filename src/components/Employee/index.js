@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 export const Employee = ({ employee }) => {
-  const { name, email, created_at, active, avatar } = employee;
+  const { name, email, created_at, active, avatar, role } = employee;
+
+  const [error, setError] = useState();
 
   return (
     <article>
@@ -10,12 +14,13 @@ export const Employee = ({ employee }) => {
       ) : null}
       <p>Created on: {new Date(created_at).toLocaleDateString()}</p>
       <p>Active: {active}</p>
-      {/* 
+
       {employee && role === "admin" ? (
         <section>
-          <button>Detete employee</button>
+          {/* <button>Delete employee</button> */}
+          {error ? <p>{error}</p> : null}
         </section>
-      ) : null} */}
+      ) : null}
     </article>
   );
 };
