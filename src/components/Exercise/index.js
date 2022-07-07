@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import useChekLike from "../../hooks/useCheckLike";
 import { deleteExerciseService } from "../../services/exercises/deleteExerciseService";
@@ -72,9 +72,14 @@ export const Exercise = ({ exercise, removeExercise }) => {
             <button onClick={() => deleteExercise(exercise.id)}>
               DELETE EXERCISE
             </button>
-            <Link to={`/exercises/${exercise.id}/edit`}>
-              <button>EDIT EXERCISE</button>
-            </Link>
+
+            <button
+              onClick={() => {
+                navigate(`/exercises/${exercise.id}/edit`);
+              }}
+            >
+              EDIT EXERCISE
+            </button>
           </div>
         ) : (
           <>
