@@ -1,0 +1,14 @@
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+
