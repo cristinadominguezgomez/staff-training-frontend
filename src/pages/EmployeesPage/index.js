@@ -1,24 +1,19 @@
 import { EmployeesList } from "../../components/EmployeesList";
-import { useContext } from "react";
-import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 
 import useEmployees from "../../hooks/useEmployees";
 
 export const EmployeesPage = () => {
-  const { employees, loading, error } = useEmployees();
-  const { employee } = useContext(EmployeeTokenContext);
+  const { employees, loading, error, removeEmployee } = useEmployees();
 
   if (loading) return <p>Cargando employees...</p>;
 
   if (error) return <p>{error}</p>;
 
-  console.log(employees, loading, error);
-
-  return employee && employee.role === "admin" ? (
+  return employees ? (
     <section>
       <h1>Employees Page</h1>
 
-      <EmployeesList employees={employees} />
+      <EmployeesList employees={employees} removeEmployee={removeEmployee} />
     </section>
   ) : null;
 };

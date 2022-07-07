@@ -1,9 +1,23 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
+import deleteEmployeeService from "../../services/employees/deleteEmployeeService";
 
-export const Employee = ({ employee }) => {
-  const { name, email, created_at, active, avatar, role } = employee;
+export const Employee = ({ employee, removeEmployee }) => {
+  const { token } = useContext(EmployeeTokenContext);
 
   const [error, setError] = useState();
+
+  const { id, name, email, created_at, active, avatar } = employee;
+
+  const deleteEmployee = async (id) => {
+    try {
+      await deleteEmployeeService({ id, token });
+
+      removeEmployee(id);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   return (
     <article>
@@ -14,9 +28,15 @@ export const Employee = ({ employee }) => {
       ) : null}
       <p>Created on: {new Date(created_at).toLocaleDateString()}</p>
       <p>Active: {active}</p>
-
       <section>
-        {/* <button>Delete employee</button> */}
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            deleteEmployee(id);
+          }}
+        >
+          Delete employee
+        </button>
         {error ? <p>{error}</p> : null}
       </section>
     </article>

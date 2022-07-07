@@ -1,4 +1,4 @@
-export const deleteExerciseService = async ({ id, token }) => {
+const deleteEmployeeService = async ({ id, token }) => {
   const res = await fetch(`${process.env.REACT_APP_BACKEND}/employees/${id}`, {
     method: "DELETE",
     headers: {
@@ -11,3 +11,5 @@ export const deleteExerciseService = async ({ id, token }) => {
     throw new Error(body.message);
   }
 };
+
+export default deleteEmployeeService;

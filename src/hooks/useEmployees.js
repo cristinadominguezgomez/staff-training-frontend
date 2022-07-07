@@ -22,11 +22,11 @@ const useEmployees = () => {
     loadEmployees();
   }, []);
 
-  //   const removeEmployee = (id) => {
-  //     setExercises(exercises.filter((exercise) => exercise.id !== id));
-  //   };
+  const removeEmployee = (id) => {
+    setEmployees(employees.filter((employee) => employee.id !== id));
+  };
 
-  return { employees, loading, error };
+  return { employees, loading, error, removeEmployee };
 };
 
 export default useEmployees;
