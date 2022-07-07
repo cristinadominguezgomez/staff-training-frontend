@@ -10,7 +10,7 @@ export const ExercisesPage = () => {
 
   return (
     <section>
-      <h1>Exercises Page</h1>
+      <h2>Exercises Page</h2>
       <ExercisesList exercises={exercises} removeExercise={removeExercise} />
     </section>
   );

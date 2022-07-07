@@ -1,15 +1,27 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
+import useChekLike from "../../hooks/useCheckLike";
 import { deleteExerciseService } from "../../services/exercises/deleteExerciseService";
 import { likeExerciseService } from "../../services/exercises/likeExerciseService";
 
 export const Exercise = ({ exercise, removeExercise }) => {
-  const { title, description, type, created_at, muscle_group, image, id } =
-    exercise;
+  const {
+    title,
+    description,
+    type,
+    created_at,
+    muscle_group,
+    image,
+    id,
+    likes: initialLikes,
+  } = exercise;
   const { employee, token } = useContext(EmployeeTokenContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [likes, setLikes] = useState(initialLikes);
+  const { didEmployeeLikeExercise, setDidEmployeeLikeExercise } =
+    useChekLike(id);
 
   const deleteExercise = async (id) => {
     try {
@@ -22,9 +34,19 @@ export const Exercise = ({ exercise, removeExercise }) => {
     }
   };
 
-  const likeExercise = async () => {
+  const likeExercise = async (e) => {
     try {
+      e.preventDefault();
+
       likeExerciseService(id, token);
+
+      setDidEmployeeLikeExercise(!didEmployeeLikeExercise);
+
+      if (didEmployeeLikeExercise) {
+        setLikes(likes - 1);
+      } else {
+        setLikes(likes + 1);
+      }
     } catch (error) {
       setError(error.message);
     }
@@ -33,10 +55,7 @@ export const Exercise = ({ exercise, removeExercise }) => {
     employee && (
       <>
         <article>
-          <Link to={`/exercise/${exercise.id}`}>
-            <p>{title}</p>
-          </Link>
-
+          <h2>{title}</h2>
           <p>{description}</p>
           <p>{type}</p>
           <p>{muscle_group}</p>
@@ -53,12 +72,20 @@ export const Exercise = ({ exercise, removeExercise }) => {
             <button onClick={() => deleteExercise(exercise.id)}>
               DELETE EXERCISE
             </button>
-            <Link to={`/exercises/${exercise.id}/edit`}>
-              <button>EDIT EXERCISE</button>
-            </Link>
+
+            <button
+              onClick={() => {
+                navigate(`/exercises/${exercise.id}/edit`);
+              }}
+            >
+              EDIT EXERCISE
+            </button>
           </div>
         ) : (
-          <button onClick={likeExercise}>LIKE</button>
+          <>
+            <p>LIKES: {likes}</p>
+            <button onClick={likeExercise}>LIKE</button>
+          </>
         )}
         {error ? <p>{error}</p> : null}
       </>

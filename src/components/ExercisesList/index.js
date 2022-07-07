@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Exercise } from "../Exercise";
 
 export const ExercisesList = ({ exercises, removeExercise }) => {
@@ -5,7 +6,9 @@ export const ExercisesList = ({ exercises, removeExercise }) => {
     <ul>
       {exercises.map((exercise) => (
         <li key={exercise.id}>
-          <Exercise exercise={exercise} removeExercise={removeExercise} />
+          <Link to={`/exercise/${exercise.id}`}>
+            <Exercise exercise={exercise} removeExercise={removeExercise} />
+          </Link>
         </li>
       ))}
     </ul>
