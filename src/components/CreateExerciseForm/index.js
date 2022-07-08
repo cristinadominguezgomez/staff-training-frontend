@@ -4,10 +4,6 @@ import { useEmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import { useNavigate } from "react-router-dom";
 
 export const CreateExerciseForm = () => {
-  // const [title, setTitle] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [type, setType] = useState("");
-  // const [muscle_group, setMuscle_group] = useState("");
   const [error, setError] = useState("");
   const { token } = useEmployeeTokenContext();
   const navigate = useNavigate();
@@ -55,7 +51,7 @@ export const CreateExerciseForm = () => {
         <input id="image" name="image" type="file" />
       </fieldset>
 
-      <button>Create New Exercise</button>
+      <button className="button">Create New Exercise</button>
       {error ? <p>{error}</p> : null}
     </form>
   );

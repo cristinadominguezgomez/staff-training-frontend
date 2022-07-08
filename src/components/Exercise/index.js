@@ -69,11 +69,15 @@ export const Exercise = ({ exercise, removeExercise }) => {
         </article>
         {employee && employee.role === "admin" ? (
           <div>
-            <button onClick={() => deleteExercise(exercise.id)}>
+            <button
+              className="button"
+              onClick={() => deleteExercise(exercise.id)}
+            >
               DELETE EXERCISE
             </button>
 
             <button
+              className="button"
               onClick={() => {
                 navigate(`/exercises/${exercise.id}/edit`);
               }}
@@ -84,7 +88,9 @@ export const Exercise = ({ exercise, removeExercise }) => {
         ) : (
           <>
             <p>LIKES: {likes}</p>
-            <button onClick={likeExercise}>LIKE</button>
+            <button className="button" onClick={likeExercise}>
+              LIKE
+            </button>
           </>
         )}
         {error ? <p>{error}</p> : null}

@@ -27,10 +27,12 @@ export const EditExerciseForm = ({ id }) => {
           description: data.description || "",
           type: data.type || "",
           muscle_group: data.muscle_group || "",
-          image: data.image ? `${process.env.REACT_APP_BACKEND}/${data.image}`: "",
+          image: data.image
+            ? `${process.env.REACT_APP_BACKEND}/${data.image}`
+            : "",
         });
       } catch (error) {
-        setError("ha habido un error en la peticion");
+        setError("there was an error in the request");
       }
     };
     getExercise();
@@ -58,10 +60,10 @@ export const EditExerciseForm = ({ id }) => {
     try {
       if (token) {
         editExerciseService({ id, token, dataForm });
-        alert("Ejercicio EEDITADO");
+        alert("Edited Exercise Successfully");
         navigate("/exercises");
       } else {
-        alert("tienes que logearte");
+        alert("YOU HAVE TO LOG IN");
         navigate("/login");
       }
     } catch (error) {
@@ -129,7 +131,9 @@ export const EditExerciseForm = ({ id }) => {
         ) : null}
       </fieldset>
 
-      <button type="submit">Edit Exercise</button>
+      <button className="button" type="submit">
+        Edit Exercise
+      </button>
       {error ? <p>{error}</p> : null}
     </form>
   ) : (
