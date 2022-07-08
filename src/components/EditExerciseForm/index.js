@@ -53,9 +53,9 @@ export const EditExerciseForm = ({ id }) => {
   };
 
   const handleSubmit = (e) => {
-    const dataForm = new FormData(e.target);
-
     e.preventDefault();
+
+    const dataForm = new FormData(e.target);
 
     try {
       if (token) {

@@ -1,10 +1,7 @@
-export const registerService = async ({ email, password, name }) => {
+export const registerService = async ({ dataForm }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/employees`, {
     method: "POST",
-    body: JSON.stringify({ email, password, name }),
-    headers: {
-      "Content-Type": "application/json",
-    },
+    body: dataForm,
   });
 
   const json = await response.json();
