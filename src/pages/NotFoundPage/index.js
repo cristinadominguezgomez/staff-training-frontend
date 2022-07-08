@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export const NotFoundPage = () => {
   return (
     <section>
-      <h1>Not found</h1>
+      <h2>Not found</h2>
       <Link to={"/"}>Go to Home Page</Link>
     </section>
   );

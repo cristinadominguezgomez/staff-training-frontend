@@ -18,5 +18,10 @@ export const EmployeePage = () => {
       <h1>Employee</h1>
       <Employee employee={employee} />
     </section>
-  ) : null;
+  ) : (
+    <p>
+      To view our team of professionals you must be an administrator of this
+      page
+    </p>
+  );
 };

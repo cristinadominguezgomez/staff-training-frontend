@@ -13,6 +13,7 @@ export const RegisterForm = () => {
 
   const handleForm = async (e) => {
     e.preventDefault();
+    setError("");
     if (pass1 !== pass2) {
       setError("Passwords do not match");
       return;
@@ -20,6 +21,7 @@ export const RegisterForm = () => {
 
     try {
       await registerService({ email, password: pass1, name });
+      alert("Successfully registered User. Check your email.");
       navigate("/login");
     } catch (error) {
       setError(error.message);
@@ -28,7 +30,7 @@ export const RegisterForm = () => {
 
   return (
     <section>
-      <h1>Register</h1>
+      <h2>Register</h2>
       <form onSubmit={handleForm}>
         <fieldset>
           <label htmlFor="name">Name</label>
@@ -74,7 +76,7 @@ export const RegisterForm = () => {
             onChange={(e) => setPass2(e.target.value)}
           />
         </fieldset>
-        <button>Register</button>
+        <button className="button">Register</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>
