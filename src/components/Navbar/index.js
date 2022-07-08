@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { Auth } from "../../components/Auth";
 import { Link } from "react-router-dom";
-// import { useEmployeeTokenContext } from "../../context/EmployeeTokenContext";
+import { useEmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import "../Navbar/style.css";
 
 const Navbar = () => {
-  // const { employee } = useEmployeeTokenContext();
+  const { employee } = useEmployeeTokenContext();
 
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
@@ -27,24 +27,24 @@ const Navbar = () => {
               <Link to="/">ABOUT US</Link>
             </li>{" "}
             <li>
-              <Link to="/exercises">EXERCISES</Link>
-            </li>
-            <li>
               <Link to="/">CONTACT US</Link>
             </li>
+            {employee?.role === "admin" && (
+              <>
+                <li>
+                  <Link to="/employees">EMPLOYEES</Link>
+                </li>
+              </>
+            )}
+            {employee ? (
+              <li>
+                <Link to="/exercises">EXERCISES</Link>
+              </li>
+            ) : null}
           </ul>
           <Auth />
         </div>
-        {/* {employee && employee.role === "admin" ? (
-          <ul>
-            <li>
-              <Link to="/create/exercises">Create New Exercise</Link>
-            </li>
-            <li>
-              <Link to="/employees">Listado empleados</Link>
-            </li>
-          </ul>
-        ) : null} */}
+
         <button
           className="hamburger"
           onClick={() => {

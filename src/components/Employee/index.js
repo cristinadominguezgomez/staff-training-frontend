@@ -30,6 +30,7 @@ export const Employee = ({ employee, removeEmployee }) => {
       <p>Active: {active}</p>
       <section>
         <button
+          className="button"
           onClick={(e) => {
             e.preventDefault();
             deleteEmployee(id);

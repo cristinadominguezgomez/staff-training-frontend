@@ -12,7 +12,7 @@ export const EmployeeDetail = () => {
 
   return (
     <section>
-      <h1>Name: {employee.name}</h1>
+      <h2>Name: {employee.name}</h2>
       <p>Email: {employee.email}</p>
       <section>
         <p>Employee id: {employee.id}</p>

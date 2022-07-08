@@ -13,9 +13,14 @@ export const EmployeesPage = () => {
 
   return employeeContext && employeeContext.role === "admin" ? (
     <section>
-      <h1>Employees Page</h1>
+      <h2>Employees Page</h2>
 
       <EmployeesList employees={employees} removeEmployee={removeEmployee} />
     </section>
-  ) : null;
+  ) : (
+    <p>
+      To view our team of professionals you must be an administrator of this
+      page
+    </p>
+  );
 };
