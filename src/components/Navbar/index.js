@@ -25,28 +25,25 @@ const Navbar = () => {
             </li>
             <li onClick={() => setIsNavExpanded(false)}>
               <Link to="/">ABOUT US</Link>
-
             </li>
             <li onClick={() => setIsNavExpanded(false)}>
- <Link to="/">CONTACT US</Link>
-            
+              <Link to="/">CONTACT US</Link>
             </li>
             {employee?.role === "admin" && (
               <>
-                <li>
+                <li onClick={() => setIsNavExpanded(false)}>
                   <Link to="/employees">EMPLOYEES</Link>
                 </li>
               </>
             )}
             {employee ? (
-              <li>
+              <li onClick={() => setIsNavExpanded(false)}>
                 <Link to="/exercises">EXERCISES</Link>
               </li>
             ) : null}
           </ul>
           <div onClick={() => setIsNavExpanded(false)}>
-          <Auth />
-
+            <Auth />
           </div>
         </div>
 
