@@ -20,14 +20,16 @@ const Navbar = () => {
         </Link>
         <div className={isNavExpanded ? "menu expanded" : "menu"}>
           <ul>
-            <li>
+            <li onClick={() => setIsNavExpanded(false)}>
               <Link to="/">HOME</Link>
-            </li>{" "}
-            <li>
+            </li>
+            <li onClick={() => setIsNavExpanded(false)}>
               <Link to="/">ABOUT US</Link>
-            </li>{" "}
-            <li>
-              <Link to="/">CONTACT US</Link>
+
+            </li>
+            <li onClick={() => setIsNavExpanded(false)}>
+ <Link to="/">CONTACT US</Link>
+            
             </li>
             {employee?.role === "admin" && (
               <>
@@ -42,7 +44,10 @@ const Navbar = () => {
               </li>
             ) : null}
           </ul>
+          <div onClick={() => setIsNavExpanded(false)}>
           <Auth />
+
+          </div>
         </div>
 
         <button
