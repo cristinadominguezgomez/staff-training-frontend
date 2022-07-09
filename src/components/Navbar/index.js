@@ -24,10 +24,10 @@ const Navbar = () => {
               <Link to="/">HOME</Link>
             </li>
             <li onClick={() => setIsNavExpanded(false)}>
-              <Link to="/">ABOUT US</Link>
+              <Link to="/about">ABOUT US</Link>
             </li>
             <li onClick={() => setIsNavExpanded(false)}>
-              <Link to="/">CONTACT US</Link>
+              <Link to="/contact">CONTACT US</Link>
             </li>
             {employee?.role === "admin" && (
               <>

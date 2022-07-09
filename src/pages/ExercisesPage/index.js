@@ -12,22 +12,13 @@ export const ExercisesPage = () => {
 
   return (
     <>
-      {employee?.role === "admin" && (
+      {employee ? (
         <section>
           <h2>Exercises Page</h2>
-          <p>BUSCADOR</p>
           <ExercisesList
             exercises={exercises}
             removeExercise={removeExercise}
           />
-        </section>
-      )}
-
-      {employee ? (
-        <section>
-          <h2>Exercises Page</h2>
-          <p>BUSCADOR</p>
-          <ExercisesList exercises={exercises} />
         </section>
       ) : (
         <p>
