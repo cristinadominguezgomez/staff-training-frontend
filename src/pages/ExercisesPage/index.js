@@ -5,9 +5,12 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 import { Select } from "antd";
-const { Option } = Select;
+
 
 export const ExercisesPage = () => {
+
+const { Option } = Select;
+
 
   const [muscleGroup, setMuscleGroup] = useState();
   const handleMuscleGroupChange = (value) => {

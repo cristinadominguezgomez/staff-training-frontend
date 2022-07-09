@@ -73,7 +73,7 @@ export const Exercise = ({ exercise, removeExercise }) => {
               className="button"
               onClick={() => deleteExercise(exercise.id)}
             >
-              DELETE EXERCISE
+              DELETE 
             </button>
 
             <button
@@ -82,7 +82,7 @@ export const Exercise = ({ exercise, removeExercise }) => {
                 navigate(`/exercises/${exercise.id}/edit`);
               }}
             >
-              EDIT EXERCISE
+              EDIT 
             </button>
           </div>
         ) : (
