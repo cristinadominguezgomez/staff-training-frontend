@@ -1,0 +1,29 @@
+section.employe article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.employe article div {
+  width: 20rem;
+  height: 20rem;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+section.employe article img {
+  width: 100%;
+  height: auto;
+}
+
+section.employe article div + p {
+  padding-top: 1rem;
+}
+
+section.employe article section {
+  padding: 1rem;
+}
+
+section.delete .button {
+  padding: 0 1rem;
+}

@@ -1,0 +1,30 @@
+ul.listEmployees {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+ul.listEmployees li {
+  background-color: #e0dddd;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25rem;
+  box-shadow: 0.2rem 0.3rem 2px rgb(93, 91, 91);
+}
+
+ul.listEmployees li article div {
+  width: 10rem;
+  height: auto;
+  overflow: hidden;
+}
+
+ul.listEmployees li article div img {
+  width: 100%;
+}
