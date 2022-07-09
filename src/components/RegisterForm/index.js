@@ -5,22 +5,46 @@ import { useNavigate } from "react-router-dom";
 export const RegisterForm = () => {
   const navigate = useNavigate();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [pass1, setPass1] = useState("");
-  const [pass2, setPass2] = useState("");
+  const [employeeData, setEmployeeData] = useState({
+    name: "",
+    email: "",
+    pass1: "",
+    pass2: "",
+    avatar: "",
+  });
+
   const [error, setError] = useState("");
+
+  const handleInputChange = (e) => {
+    const { name, type, value } = e.target;
+    let inputValue = value;
+
+    if (type === "file") {
+      inputValue = URL.createObjectURL(e.target.files[0]);
+    }
+    setEmployeeData({
+      ...employeeData,
+      [name]: inputValue,
+    });
+  };
 
   const handleForm = async (e) => {
     e.preventDefault();
+
+    const dataForm = new FormData(e.target);
+
     setError("");
-    if (pass1 !== pass2) {
+
+    if (employeeData.pass1 !== employeeData.pass2) {
       setError("Passwords do not match");
       return;
     }
 
+    dataForm.delete("pass1");
+    dataForm.delete("pass2");
+    dataForm.append("password", employeeData.pass1);
     try {
-      await registerService({ email, password: pass1, name });
+      await registerService({ dataForm });
       alert("Successfully registered User. Check your email.");
       navigate("/login");
     } catch (error) {
@@ -38,9 +62,9 @@ export const RegisterForm = () => {
             type="text"
             id="name"
             name="name"
-            value={name}
+            value={employeeData.name}
             required
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleInputChange}
           />
         </fieldset>
         <fieldset>
@@ -49,9 +73,9 @@ export const RegisterForm = () => {
             type="email"
             id="email"
             name="email"
-            value={email}
+            value={employeeData.email}
             required
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleInputChange}
           />
         </fieldset>
         <fieldset>
@@ -60,9 +84,9 @@ export const RegisterForm = () => {
             type="password"
             id="pass1"
             name="pass1"
-            value={pass1}
+            value={employeeData.pass1}
             required
-            onChange={(e) => setPass1(e.target.value)}
+            onChange={handleInputChange}
           />
         </fieldset>
         <fieldset>
@@ -71,11 +95,30 @@ export const RegisterForm = () => {
             type="password"
             id="pass2"
             name="pass2"
-            value={pass2}
+            value={employeeData.pass2}
             required
-            onChange={(e) => setPass2(e.target.value)}
+            onChange={handleInputChange}
           />
         </fieldset>
+
+        <fieldset>
+          <label htmlFor="avatar">Image:</label>
+          <input
+            id="avatar"
+            name="avatar"
+            type="file"
+            onChange={handleInputChange}
+          />
+          {employeeData.avatar ? (
+            <img
+              width={50}
+              heigth={50}
+              src={employeeData.avatar}
+              alt={employeeData.name}
+            />
+          ) : null}
+        </fieldset>
+
         <button className="button">Register</button>
         {error ? <p>{error}</p> : null}
       </form>
