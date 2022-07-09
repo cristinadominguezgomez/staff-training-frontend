@@ -8,11 +8,11 @@ export const Auth = () => {
 
   return employee ? (
     <div className="nav-profile">
-      <div>
+      <Link to="/profile">
         <Avatar avatar={employee?.avatar} username={employee?.name} />
         <p>{employee.name}</p>
         <p>{employee.role}</p>
-      </div>
+      </Link>
       <button className="button" onClick={() => logout()}>
         Logout
       </button>
