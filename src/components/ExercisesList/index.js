@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Exercise } from "../Exercise";
+import "./style.css"
 
 export const ExercisesList = ({ exercises, removeExercise }) => {
   return exercises.length ? (

@@ -1,0 +1,30 @@
+.exercises {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+aside {
+  width: 20%;
+  background-color: #9cdd00;
+  padding: 1em 2em;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: 0.6em;
+  color: white;
+}
+
+.filters-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
