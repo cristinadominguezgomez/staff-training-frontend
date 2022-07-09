@@ -14,8 +14,8 @@ export const EmployeePage = () => {
   if (error) return <p>{error}</p>;
 
   return employeeContext && employeeContext.role === "admin" ? (
-    <section>
-      <h1>Employee</h1>
+    <section className="employe">
+      <h2>Employee</h2>
       <Employee employee={employee} />
     </section>
   ) : (

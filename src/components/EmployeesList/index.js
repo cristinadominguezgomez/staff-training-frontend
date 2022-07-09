@@ -1,9 +1,10 @@
 import { Employee } from "../Employee";
 import { Link } from "react-router-dom";
+import "../EmployeesList/style.css";
 
 export const EmployeesList = ({ employees, removeEmployee }) => {
   return employees.length ? (
-    <ul>
+    <ul className="listEmployees">
       {employees.map((employee) => (
         <li key={employee.id}>
           <Link to={`/employee/${employee.id}`}>
