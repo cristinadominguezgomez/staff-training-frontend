@@ -5,6 +5,8 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 
 import { HomePage } from "./pages/HomePage";
+import { ContactUsePage } from "./pages/ContactUsePage";
+import { AboutUsePage } from "./pages/AboutUsePage";
 import { ExercisesPage } from "./pages/ExercisesPage";
 import { ExercisePage } from "./pages/ExercisePage";
 import { RegisterPage } from "./pages/RegisterPage";
@@ -24,6 +26,8 @@ function App() {
       <main className="container">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<ContactUsePage />} />
+          <Route path="/about" element={<AboutUsePage />} />
           <Route path="/exercises" element={<ExercisesPage />} />
           <Route path="/exercise/:id" element={<ExercisePage />} />
           <Route path="/exercises/:id/edit" element={<EditExercisePage />} />
@@ -37,7 +41,7 @@ function App() {
           <Route path="/employee/:id" element={<EmployeePage />}></Route>
         </Routes>
       </main>
-      <Footer  />
+      <Footer />
     </div>
   );
 }
