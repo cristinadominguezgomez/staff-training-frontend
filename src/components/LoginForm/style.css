@@ -1,0 +1,36 @@
+form.login {
+  display: grid;
+  height: 80vh;
+  place-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 300px;
+}
+
+form.login legend {
+  text-align: center;
+}
+
+form.login label {
+  display: none;
+}
+
+form.login p {
+  text-align: right;
+}
+
+form.login input {
+  padding: 0.5rem;
+
+  background-color: #e9e9e9;
+  /* background-color: #a8a8a8; */
+  /* background-color: #8c8c8c; */
+  /* border: 2px solid #a8a8a8; */
+  border: 2px solid #8c8c8c;
+}
+
+form.login button {
+  margin-top: 10rem;
+  width: fit-content;
+  margin: auto;
+}
