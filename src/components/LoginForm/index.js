@@ -1,3 +1,4 @@
+import "../LoginForm/style.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEmployeeTokenContext } from "../../context/EmployeeTokenContext";
@@ -19,8 +20,8 @@ export const LoginForm = () => {
 
       setToken(token);
 
-      setEmail("");
-      setPassword("");
+      // setEmail("");
+      // setPassword("");
 
       navigate("/");
     } catch (error) {
@@ -28,34 +29,49 @@ export const LoginForm = () => {
     }
   };
 
+  const onReset = () => {
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <>
-      <form onSubmit={handleForm}>
-        <label htmlFor="email">Email:</label>
-        <input
-          id="email"
-          type="email"
-          required
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-
-        <label htmlFor="password">Password:</label>
-        <input
-          id="password"
-          type="password"
-          required
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-
-        <button className="button">Login</button>
-        {error ? <p>{error}</p> : null}
+      <form className="login" onSubmit={handleForm}>
+        <legend>If you are registered, log in</legend>
+        <fieldset>
+          <label htmlFor="email">Email:</label>
+          <input
+            id="email"
+            type="email"
+            required
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </fieldset>
+        <fieldset>
+          <p>¿forgot your password?</p>
+          <label htmlFor="password">Password:</label>
+          <input
+            id="password"
+            type="password"
+            required
+            value={password}
+            placeholder="Enter your password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </fieldset>
+        <fieldset>
+          <button onClick={onReset} className="button">
+            Login
+          </button>
+        </fieldset>
       </form>
+      {error ? <p>{error}</p> : null}
     </>
   );
 };
