@@ -1,0 +1,31 @@
+form.register {
+  display: grid;
+  height: 80vh;
+  place-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 300px;
+  gap: 1rem;
+}
+
+form.register label {
+  display: none;
+}
+
+form.register input {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+form.register input.file-select::before {
+  content: "Seleccionar archivo";
+}
+
+#avatar::before {
+  content: "Your avatar  ";
+}
+/* 
+form.register input form.register button {
+  width: fit-content;
+  margin: auto;
+} */
