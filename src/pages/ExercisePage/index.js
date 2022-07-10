@@ -16,7 +16,7 @@ export const ExercisePage = () => {
   if (error) return <p>{error}</p>;
 
   return employee ? (
-    <section class="detail-exercise">
+    <section class="detail-exercise container">
       <Exercise exercise={exercise} />
       <p className="description">{exercise.description}</p>
     </section>

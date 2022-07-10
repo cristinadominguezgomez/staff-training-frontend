@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <Header />
-      <main className="container">
+      <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactUsePage />} />

@@ -47,7 +47,7 @@ export const ExercisesPage = () => {
   return (
     <>
       {employee ? (
-        <section>
+        <section className="container">
           <div className="exercises">
             <aside className="aside">
               <fieldset>
@@ -100,11 +100,13 @@ export const ExercisesPage = () => {
               </div>
             </aside>
             <div className="content">
+            {employee?.role === "admin" &&
+
               <div className="button-new-exercise">
                 <Link to={"/create/exercises"}>
                   <button className="button">Create New</button>
                 </Link>
-              </div>
+              </div>}
               <ExercisesList
                 exercises={exercises}
                 removeExercise={removeExercise}

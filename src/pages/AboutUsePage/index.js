@@ -2,7 +2,7 @@ import "../AboutUsePage/style.css";
 
 export const AboutUsePage = () => {
   return (
-    <section className="about">
+    <section className="about container">
       <p>
         It is simple. At Staff Training, our mission is to help you develop an
         active and healthy lifestyle.{" "}

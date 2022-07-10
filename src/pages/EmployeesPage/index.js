@@ -12,7 +12,7 @@ export const EmployeesPage = () => {
   if (error) return <p>{error}</p>;
 
   return employeeContext && employeeContext.role === "admin" ? (
-    <section>
+    <section className="container">
       <h2>Employees Page</h2>
 
       <EmployeesList employees={employees} removeEmployee={removeEmployee} />
