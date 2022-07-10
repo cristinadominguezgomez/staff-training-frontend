@@ -55,12 +55,13 @@ export const Exercise = ({ exercise, removeExercise }) => {
     employee && (
       <div className="exercise">
         <article>
-          <h2>{title}</h2>
-          <div className="exercise-type">
-            <p>{muscle_group}</p>
-            <p>{type}</p>
-          </div>
           <Link to={`/exercise/${exercise.id}`}>
+            <h2>{title}</h2>
+            <div className="exercise-type">
+              <p>{muscle_group}</p>
+              <p>{type}</p>
+            </div>
+          </Link>
 
           <div className="images">
             {image ? (
@@ -70,7 +71,6 @@ export const Exercise = ({ exercise, removeExercise }) => {
               />
             ) : null}
           </div>
-          </Link>
 
           <p>
             <span>Created on:</span> {new Date(created_at).toLocaleDateString()}

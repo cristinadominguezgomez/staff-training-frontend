@@ -4,12 +4,14 @@ import { useContext } from "react";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import useExercise from "../../hooks/useExercise";
 import "./style.css";
+import useExercises from "../../hooks/useExercises";
 //import { Link } from "react-router-dom";
 
 export const ExercisePage = () => {
   const { id } = useParams();
   const { employee } = useContext(EmployeeTokenContext);
   const { exercise, loading, error } = useExercise(id);
+  const { removeExercise } = useExercises();
 
   if (loading) return <p>Cargando exercises...</p>;
 
@@ -17,7 +19,7 @@ export const ExercisePage = () => {
 
   return employee ? (
     <section class="detail-exercise container">
-      <Exercise exercise={exercise} />
+      <Exercise exercise={exercise} removeExercise={removeExercise} />
       <p className="description">{exercise.description}</p>
     </section>
   ) : (
