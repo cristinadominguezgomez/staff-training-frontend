@@ -20,18 +20,13 @@ export const LoginForm = () => {
 
       setToken(token);
 
-      // setEmail("");
-      // setPassword("");
-
       navigate("/");
     } catch (error) {
+      setEmail("");
+      setPassword("");
+
       setError(error.message);
     }
-  };
-
-  const onReset = () => {
-    setEmail("");
-    setPassword("");
   };
 
   return (
@@ -66,9 +61,7 @@ export const LoginForm = () => {
           />
         </fieldset>
         <fieldset>
-          <button onClick={onReset} className="button">
-            Login
-          </button>
+          <button className="button">Login</button>
         </fieldset>
       </form>
       {error ? <p>{error}</p> : null}

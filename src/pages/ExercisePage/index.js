@@ -15,7 +15,7 @@ export const ExercisePage = () => {
 
   if (error) return <p>{error}</p>;
 
-  return employee && employee.role === "admin" ? (
+  return employee ? (
     <section class="detail-exercise">
       <Exercise exercise={exercise} />
       <p className="description">{exercise.description}</p>

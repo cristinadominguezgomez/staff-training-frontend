@@ -1,10 +1,10 @@
+import "../Profile/style.css";
 import { useEmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import { Navigate } from "react-router-dom";
-import Avatar from "../Avatar";
-// import useEmployee from "../../hooks/useEmployee";
 
 export const Profile = () => {
   const { token, employee, loading, error } = useEmployeeTokenContext();
+  const { avatar } = employee;
 
   if (!token) {
     return <Navigate to="/login" />;
@@ -19,20 +19,21 @@ export const Profile = () => {
   }
 
   return (
-    <section>
-      <h2>Employee profile</h2>
+    <section className="profile">
+      <h2>Profile</h2>
 
       {employee && (
         <>
-          <Avatar avatar={employee?.avatar} username={employee?.name} />
+          {avatar ? (
+            <div>
+              <img
+                src={`${process.env.REACT_APP_BACKEND}/${avatar}`}
+                alt={employee.name}
+              />
+            </div>
+          ) : null}
           <p>Name: {employee?.name}</p>
           <p>Email: {employee?.email}</p>
-
-          <section>
-            <h2>My exercise favorites</h2>
-
-            {/* <EntriesList entries={employee?.like} /> */}
-          </section>
         </>
       )}
     </section>
