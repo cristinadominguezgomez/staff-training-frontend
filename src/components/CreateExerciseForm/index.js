@@ -1,3 +1,4 @@
+import "../CreateExerciseForm/style.css";
 import { useState } from "react";
 import { newExercise } from "../../services/exercises/postNewExercise";
 import { useEmployeeTokenContext } from "../../context/EmployeeTokenContext";
@@ -11,7 +12,7 @@ export const CreateExerciseForm = () => {
   const createExercise = async (e) => {
     e.preventDefault();
     try {
-      const dataForm = new FormData(e.target); //contiene los datos del formulario
+      const dataForm = new FormData(e.target);
 
       const exercise = await newExercise({
         dataForm,
@@ -51,7 +52,7 @@ export const CreateExerciseForm = () => {
         <input id="image" name="image" type="file" />
       </fieldset>
 
-      <button className="button">Create New Exercise</button>
+      <button className="button">Create New</button>
       {error ? <p>{error}</p> : null}
     </form>
   );

@@ -5,7 +5,6 @@ export const EmployeeDetail = () => {
   const { id } = useParams();
   const { employee, loading, error } = useEmployee(id);
   const { avatar } = employee;
-  console.log(avatar, "avatar");
 
   if (loading) return <p>cargando....</p>;
   if (error) return <p>error</p>;

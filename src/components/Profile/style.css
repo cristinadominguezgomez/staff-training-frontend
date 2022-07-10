@@ -1,0 +1,40 @@
+section.profile {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem auto;
+  gap: 1rem;
+  box-shadow: rgba(28, 27, 27, 0.16) 0px 1px 4px;
+}
+
+section.profile h2 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: black;
+  color: white;
+}
+
+section.profile div {
+  text-align: center;
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+}
+
+section.profile div img {
+  max-width: 100%;
+  height: auto;
+}
+
+section.profile p:last-child {
+  padding-bottom: 2rem;
+}
+/* 
+@media (min-width: 768px) {
+  section.profile {
+    
+  }
+} */
