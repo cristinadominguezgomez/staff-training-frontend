@@ -1,5 +1,16 @@
-/* ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+ul.list-exercises {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   list-style: none;
-} */
+}
+
+ul.list-exercises li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25rem;
+}

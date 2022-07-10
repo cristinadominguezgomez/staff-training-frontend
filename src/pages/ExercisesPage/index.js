@@ -2,15 +2,12 @@ import { ExercisesList } from "../../components/ExercisesList";
 import useExercises from "../../hooks/useExercises";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import { Select } from "antd";
 
-
 export const ExercisesPage = () => {
-
-const { Option } = Select;
-
+  const { Option } = Select;
 
   const [muscleGroup, setMuscleGroup] = useState();
   const handleMuscleGroupChange = (value) => {
@@ -52,7 +49,7 @@ const { Option } = Select;
       {employee ? (
         <section>
           <div className="exercises">
-            <aside>
+            <aside className="aside">
               <fieldset>
                 <label htmlFor="type">Type</label>
                 <Select
@@ -102,7 +99,12 @@ const { Option } = Select;
                 </button>
               </div>
             </aside>
-            <div>
+            <div className="content">
+              <div className="button-new-exercise">
+                <Link to={"/create/exercises"}>
+                  <button className="button">Create New</button>
+                </Link>
+              </div>
               <ExercisesList
                 exercises={exercises}
                 removeExercise={removeExercise}

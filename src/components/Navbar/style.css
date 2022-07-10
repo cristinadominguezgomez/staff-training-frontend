@@ -4,7 +4,7 @@
   padding: 1em 0em;
 }
 
-.logo {
+nav .logo {
   display: flex;
   font-weight: 900;
   align-items: center;
@@ -14,7 +14,7 @@
   margin-right: 5rem;
 }
 
-.logo img {
+nav .logo img {
   width: 80px;
   text-align: center;
 }

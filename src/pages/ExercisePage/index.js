@@ -3,6 +3,7 @@ import { Exercise } from "../../components/Exercise";
 import { useContext } from "react";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import useExercise from "../../hooks/useExercise";
+import "./style.css";
 //import { Link } from "react-router-dom";
 
 export const ExercisePage = () => {
@@ -15,8 +16,9 @@ export const ExercisePage = () => {
   if (error) return <p>{error}</p>;
 
   return employee && employee.role === "admin" ? (
-    <section>
+    <section class="detail-exercise">
       <Exercise exercise={exercise} />
+      <p className="description">{exercise.description}</p>
     </section>
   ) : (
     <p>
