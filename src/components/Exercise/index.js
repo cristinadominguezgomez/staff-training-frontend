@@ -61,16 +61,18 @@ export const Exercise = ({ exercise, removeExercise }) => {
               <p>{muscle_group}</p>
               <p>{type}</p>
             </div>
-          </Link>
 
-          <div className="images">
-            {image ? (
-              <img
-                src={`${process.env.REACT_APP_BACKEND}/${image}`}
-                alt={title}
-              />
-            ) : null}
-          </div>
+            <div className="images">
+              {image ? (
+                <img
+                  src={`${process.env.REACT_APP_BACKEND}/${image}`}
+                  alt={title}
+                />
+              ) : (
+                <img src="/images/no-image.jpeg" alt="no-img" />
+              )}
+            </div>
+          </Link>
 
           <p>
             <span>Created on:</span> {new Date(created_at).toLocaleDateString()}
@@ -95,10 +97,14 @@ export const Exercise = ({ exercise, removeExercise }) => {
             </div>
           ) : (
             <>
-              <p>LIKES: {likes}</p>
-              <button className="button" onClick={likeExercise}>
-                LIKE
-              </button>
+              <div className="like">
+                <img
+                  onClick={likeExercise}
+                  src="/images/like.png"
+                  alt="like-img"
+                />
+                <span>{likes}</span>
+              </div>
             </>
           )}
         </article>
