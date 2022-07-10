@@ -1,3 +1,4 @@
+import "../EditExerciseForm/style.css";
 import getExerciseService from "../../services/exercises/getExerciseService";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import { useState, useEffect, useContext } from "react";
