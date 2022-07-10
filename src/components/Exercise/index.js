@@ -95,10 +95,14 @@ export const Exercise = ({ exercise, removeExercise }) => {
             </div>
           ) : (
             <>
-              <p>LIKES: {likes}</p>
-              <button className="button" onClick={likeExercise}>
-                LIKE
-              </button>
+              <div className="like">
+                <img
+                  onClick={likeExercise}
+                  src="/images/like.png"
+                  alt="like-img"
+                />
+                <span>{likes}</span>
+              </div>
             </>
           )}
         </article>

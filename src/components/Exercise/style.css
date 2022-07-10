@@ -39,7 +39,23 @@
   color: white;
   text-transform: capitalize;
 }
+.exercise .like {
+  display: flex;
+  align-items: center;
+}
 
+.exercise .like img {
+  width: 1.5em;
+  cursor: pointer;
+
+
+}
+
+.exercise .like span {
+  font-size: 1.5em;
+  color: black;
+  margin-left: 0.5em;
+}
 
 .exercise .buttons-exercise {
   display: flex;
