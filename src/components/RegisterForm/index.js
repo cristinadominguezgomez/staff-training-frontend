@@ -1,3 +1,4 @@
+import "../RegisterForm/style.css";
 import { useState } from "react";
 import { registerService } from "../../services/auth/registerService";
 import { useNavigate } from "react-router-dom";
@@ -53,15 +54,16 @@ export const RegisterForm = () => {
   };
 
   return (
-    <section>
-      <h2>Register</h2>
-      <form onSubmit={handleForm}>
+    <>
+      <form className="register" onSubmit={handleForm}>
+        <legend>¿Are you employee and you don´t have an account yet?</legend>
         <fieldset>
           <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
             name="name"
+            placeholder="Your name"
             value={employeeData.name}
             required
             onChange={handleInputChange}
@@ -73,6 +75,7 @@ export const RegisterForm = () => {
             type="email"
             id="email"
             name="email"
+            placeholder="Your email"
             value={employeeData.email}
             required
             onChange={handleInputChange}
@@ -84,6 +87,7 @@ export const RegisterForm = () => {
             type="password"
             id="pass1"
             name="pass1"
+            placeholder="Password"
             value={employeeData.pass1}
             required
             onChange={handleInputChange}
@@ -95,6 +99,7 @@ export const RegisterForm = () => {
             type="password"
             id="pass2"
             name="pass2"
+            placeholder="Repeat password"
             value={employeeData.pass2}
             required
             onChange={handleInputChange}
@@ -103,12 +108,14 @@ export const RegisterForm = () => {
 
         <fieldset>
           <label htmlFor="avatar">Image:</label>
-          <input
-            id="avatar"
-            name="avatar"
-            type="file"
-            onChange={handleInputChange}
-          />
+          <div className="file-select">
+            <input
+              id="avatar"
+              name="avatar"
+              type="file"
+              onChange={handleInputChange}
+            />
+          </div>
           {employeeData.avatar ? (
             <img
               width={50}
@@ -118,10 +125,9 @@ export const RegisterForm = () => {
             />
           ) : null}
         </fieldset>
-
         <button className="button">Register</button>
-        {error ? <p>{error}</p> : null}
       </form>
-    </section>
+      {error ? <p>{error}</p> : null}
+    </>
   );
 };
