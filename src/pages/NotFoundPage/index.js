@@ -18,7 +18,7 @@ export const NotFoundPage = () => {
         <div className="_1">THE PAGE</div>
         <div className="_2">WAS NOT FOUND</div>
         <Link className="btn" to={"/"}>
-          BACK TO MARS
+          GO TO HOME
         </Link>
       </div>
     </section>
