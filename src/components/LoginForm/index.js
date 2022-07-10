@@ -24,7 +24,6 @@ export const LoginForm = () => {
     } catch (error) {
       setEmail("");
       setPassword("");
-
       setError(error.message);
     }
   };

@@ -1,4 +1,40 @@
-div.home {
+.home-page .carousel-item {
+  display: flex;
+  background-color: black;
+  height: 65vh;
+  min-height: 600px;
+  filter: brightness(50%);
+}
+
+.home-page .carousel-item img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.home-page .content {
+  position: relative;
+}
+
+.home-page .info {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.home-page .info-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home-page h3 {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 1.5em;
+}
+
+.home-page .info {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -9,13 +45,26 @@ div.home {
   /* background-image: url("https://images.pexels.com/photos/3112004/pexels-photo-3112004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); */
 }
 
-div.message {
+.home-page .info h3 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.home-page .info p {
+  color: white;
+}
+
+.home-page .message {
   display: inline-block;
   max-width: 500px;
   padding-top: 2rem;
 }
 
-div.table {
+.home-page .message h3 {
+  text-align: left;
+}
+
+.home-page .table {
   min-width: 50%;
   padding-top: 2rem;
   display: flex;
@@ -24,16 +73,16 @@ div.table {
   text-align: center;
 }
 
-.table table {
+.home-page .table table {
   min-width: 50%;
 }
 
-.table table h2 {
+.home-page .table table h3 {
   min-width: 50%;
   text-align: center;
 }
 
-.table table th,
+.home-page .table table th,
 td {
   height: 2rem;
 }
@@ -43,14 +92,54 @@ td {
   color: rgb(255, 255, 255);
   letter-spacing: 2px;
 }
-.table tbody tr:nth-child(even) {
+.home-page .table tbody tr:nth-child(even) {
   background-color: rgb(238, 239, 238);
 }
 
-.table tbody tr:nth-child(odd) {
+.home-page .table tbody tr:nth-child(odd) {
   background-color: rgb(197, 200, 197);
 }
 
-.table tbody tr td:first-child {
+.home-page .table tbody tr td:first-child {
   font-weight: 400;
+}
+
+.home-page .our-process .our-process-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5em 0;
+}
+
+.home-page .our-process .our-process-content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-page .our-process .our-process-content > div p {
+  font-weight: 400;
+  margin-top: 2em;
+}
+
+.home-page .our-process .our-process-content > div .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #8dc448;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .home-page .carousel-item {
+    height: 100vh;
+  }
+  .home-page .info p,
+  .home-page .info h3 {
+    text-align: center;
+  }
 }

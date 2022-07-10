@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import useChekLike from "../../hooks/useCheckLike";
 import { deleteExerciseService } from "../../services/exercises/deleteExerciseService";
@@ -60,6 +60,8 @@ export const Exercise = ({ exercise, removeExercise }) => {
             <p>{muscle_group}</p>
             <p>{type}</p>
           </div>
+          <Link to={`/exercise/${exercise.id}`}>
+
           <div className="images">
             {image ? (
               <img
@@ -68,6 +70,7 @@ export const Exercise = ({ exercise, removeExercise }) => {
               />
             ) : null}
           </div>
+          </Link>
 
           <p>
             <span>Created on:</span> {new Date(created_at).toLocaleDateString()}

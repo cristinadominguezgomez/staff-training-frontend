@@ -47,7 +47,7 @@ export const ExercisesPage = () => {
   return (
     <>
       {employee ? (
-        <section>
+        <section className="container">
           <div className="exercises">
             <aside className="aside">
               <fieldset>
