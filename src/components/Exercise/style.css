@@ -1,0 +1,54 @@
+.exercise {
+  /* padding: 0 1em; */
+  margin-top: 2em;
+}
+
+.exercise article {
+  box-shadow: rgba(28, 27, 27, 0.16) 0px 1px 4px;
+  width: 25em;
+  padding: 1.5em;
+}
+
+.exercise article .images img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.exercise article p {
+  padding: 1em 0;
+}
+
+.exercise article span {
+  text-decoration: none;
+  color: #8c8c8c;
+  font-weight: 400;
+}
+
+.exercise article .exercise-type {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0.8em;
+  background-color: black;
+  font-weight: 400;
+}
+
+.exercise article .exercise-type p {
+  color: white;
+  text-transform: capitalize;
+}
+
+
+.exercise .buttons-exercise {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .exercise article {
+    width: 100%;
+    padding: 1em;
+  }
+}

@@ -11,7 +11,6 @@ export const Auth = () => {
       <Link to="/profile">
         <Avatar avatar={employee?.avatar} username={employee?.name} />
         <p>{employee.name}</p>
-        <p>{employee.role}</p>
       </Link>
       <button className="button" onClick={() => logout()}>
         Logout

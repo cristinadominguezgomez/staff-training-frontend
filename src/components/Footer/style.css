@@ -7,10 +7,20 @@ footer {
   font-weight: 300;
 }
 
-div.logo {
+footer .logo {
   display: flex;
   justify-content: center;
+  font-weight: 900;
+  align-items: center;
+  text-align: ce;
   color: #8c8c8c;
+  font-size: 1.2rem;
+  margin-right: 5rem;
+}
+
+footer .logo img {
+  width: 80px;
+  text-align: center;
 }
 
 footer > ul.regulations {

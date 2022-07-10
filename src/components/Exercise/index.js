@@ -4,17 +4,17 @@ import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import useChekLike from "../../hooks/useCheckLike";
 import { deleteExerciseService } from "../../services/exercises/deleteExerciseService";
 import { likeExerciseService } from "../../services/exercises/likeExerciseService";
+import "./style.css";
 
 export const Exercise = ({ exercise, removeExercise }) => {
   const {
     title,
-    description,
-    type,
     created_at,
-    muscle_group,
     image,
     id,
     likes: initialLikes,
+    muscle_group,
+    type,
   } = exercise;
   const { employee, token } = useContext(EmployeeTokenContext);
   const [error, setError] = useState("");
@@ -53,48 +53,54 @@ export const Exercise = ({ exercise, removeExercise }) => {
   };
   return (
     employee && (
-      <>
+      <div className="exercise">
         <article>
           <h2>{title}</h2>
-          <p>{description}</p>
-          <p>{type}</p>
-          <p>{muscle_group}</p>
-          {image ? (
-            <img
-              src={`${process.env.REACT_APP_BACKEND}/${image}`}
-              alt={title}
-            />
-          ) : null}
-          <p>Created on: {new Date(created_at).toLocaleDateString()}</p>
-        </article>
-        {employee && employee.role === "admin" ? (
-          <div>
-            <button
-              className="button"
-              onClick={() => deleteExercise(exercise.id)}
-            >
-              DELETE 
-            </button>
-
-            <button
-              className="button"
-              onClick={() => {
-                navigate(`/exercises/${exercise.id}/edit`);
-              }}
-            >
-              EDIT 
-            </button>
+          <div className="exercise-type">
+            <p>{muscle_group}</p>
+            <p>{type}</p>
           </div>
-        ) : (
-          <>
-            <p>LIKES: {likes}</p>
-            <button className="button" onClick={likeExercise}>
-              LIKE
-            </button>
-          </>
-        )}
+          <div className="images">
+            {image ? (
+              <img
+                src={`${process.env.REACT_APP_BACKEND}/${image}`}
+                alt={title}
+              />
+            ) : null}
+          </div>
+
+          <p>
+            <span>Created on:</span> {new Date(created_at).toLocaleDateString()}
+          </p>
+          {employee && employee.role === "admin" ? (
+            <div className="buttons-exercise">
+              <button
+                className="button"
+                onClick={() => deleteExercise(exercise.id)}
+              >
+                DELETE
+              </button>
+
+              <button
+                className="button"
+                onClick={() => {
+                  navigate(`/exercises/${exercise.id}/edit`);
+                }}
+              >
+                EDIT
+              </button>
+            </div>
+          ) : (
+            <>
+              <p>LIKES: {likes}</p>
+              <button className="button" onClick={likeExercise}>
+                LIKE
+              </button>
+            </>
+          )}
+        </article>
         {error ? <p>{error}</p> : null}
-      </>
+      </div>
     )
   );
 };

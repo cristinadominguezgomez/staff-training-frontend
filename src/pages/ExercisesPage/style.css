@@ -4,26 +4,46 @@
   margin-top: 50px;
 }
 
-aside {
-  width: 20%;
+.exercises aside {
+  width: 80%;
   background-color: #9cdd00;
   padding: 1em 2em;
 }
 
-fieldset {
+.exercises aside fieldset {
   display: flex;
   flex-direction: column;
   margin-top: 1.5em;
 }
 
-label {
+.exercises aside label {
   font-weight: 500;
   font-size: 1.2em;
   margin-bottom: 0.6em;
+  color: #413d3d;
 }
 
-.filters-buttons {
+.exercises aside .filters-buttons {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-top: 2em;
+}
+.exercises .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.exercises .button-new-exercise {
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .exercises {
+    display: block;
+  }
+
+  .exercises aside {
+    width: 100%;
+  }
 }

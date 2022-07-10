@@ -4,7 +4,7 @@ import "./style.css"
 
 export const ExercisesList = ({ exercises, removeExercise }) => {
   return exercises.length ? (
-    <ul>
+    <ul className="list-exercises">
       {exercises.map((exercise) => (
         <li key={exercise.id}>
           <Link to={`/exercise/${exercise.id}`}>
