@@ -6,6 +6,7 @@
 
 .exercises aside {
   width: 80%;
+  max-width: 400px;
   background-color: #9cdd00;
   padding: 1em 2em;
 }
@@ -28,6 +29,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 2em;
+  gap: 1em;
 }
 .exercises .content {
   display: flex;

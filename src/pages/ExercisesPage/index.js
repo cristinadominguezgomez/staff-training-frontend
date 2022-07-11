@@ -29,7 +29,7 @@ export const ExercisesPage = () => {
   const onSubmit = () => {
     let url = `/exercises/?`;
     if (muscleGroup) {
-      url += `&muscleGroup=${muscleGroup}`;
+      url += `&muscle_group=${muscleGroup}`;
     }
     if (type) {
       url += `&type=${type}`;
