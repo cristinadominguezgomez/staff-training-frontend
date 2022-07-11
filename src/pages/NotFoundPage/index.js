@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import "./style.css"
+import "./style.css";
 export const NotFoundPage = () => {
   return (
-    // https://codepen.io/sqfreakz/pen/GJRJOY
     <section className="not-found">
       <div id="clouds">
         <div className="cloud x1"></div>

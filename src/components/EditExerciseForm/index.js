@@ -44,7 +44,6 @@ export const EditExerciseForm = ({ id }) => {
     let inputValue = value;
 
     if (type === "file") {
-      // https://stackoverflow.com/questions/38049966/get-image-preview-before-uploading-in-react
       inputValue = URL.createObjectURL(e.target.files[0]);
     }
     setExerciseData({

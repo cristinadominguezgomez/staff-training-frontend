@@ -10,12 +10,11 @@ const Avatar = ({ avatar, username }) => {
           alt={username}
         />
       ) : (
-        // <img
-        //   className="avatar"
-        //   src={`http://localhost:3001/default-avatar.jpg`}
-        //   alt={username}
-        // />
-        <img className="avatar" src="/../images/default-avatar.jpg" alt={username} />
+        <img
+          className="avatar"
+          src="/../images/default-avatar.jpg"
+          alt={username}
+        />
       )}
     </>
   );

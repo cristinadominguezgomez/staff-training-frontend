@@ -5,7 +5,6 @@ import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import useExercise from "../../hooks/useExercise";
 import "./style.css";
 import useExercises from "../../hooks/useExercises";
-//import { Link } from "react-router-dom";
 
 export const ExercisePage = () => {
   const { id } = useParams();
