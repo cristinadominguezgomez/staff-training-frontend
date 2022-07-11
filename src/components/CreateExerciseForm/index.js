@@ -19,7 +19,6 @@ export const CreateExerciseForm = () => {
         token,
       });
 
-      //me redireccione a la pagina del ejercicio creado (por su id)
       navigate(`/exercise/${exercise.id}`);
     } catch (error) {
       setError(error.message);
