@@ -12,9 +12,11 @@ export const Auth = () => {
         <Avatar avatar={employee?.avatar} username={employee?.name} />
         <p>{employee.name}</p>
       </Link>
-      <button className="button" onClick={() => logout()}>
-        Logout
-      </button>
+      <Link to={"/"}>
+        <button className="button" onClick={() => logout()}>
+          Logout
+        </button>
+      </Link>
     </div>
   ) : (
     <div className="buttons">
