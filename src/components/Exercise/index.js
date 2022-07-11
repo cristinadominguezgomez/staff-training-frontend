@@ -98,12 +98,15 @@ export const Exercise = ({ exercise, removeExercise }) => {
           ) : (
             <>
               <div className="like">
-                <img
-                  onClick={likeExercise}
-                  src="/images/like.png"
-                  alt="like-img"
-                />
                 <span>{likes}</span>
+                <button onClick={likeExercise}>
+                  {" "}
+                  {didEmployeeLikeExercise ? (
+                    <img src="/images/likerelleno.jpg" alt="like-img" />
+                  ) : (
+                    <img src="/images/likevacio.jpg" alt="like-img" />
+                  )}{" "}
+                </button>
               </div>
             </>
           )}

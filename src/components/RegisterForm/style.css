@@ -1,31 +1,38 @@
-form.register {
+.register {
   display: grid;
-  height: 80vh;
   place-content: center;
   flex-direction: column;
   flex-grow: 1;
-  width: 300px;
-  gap: 1rem;
+  padding: 2rem;
 }
 
-form.register label {
+.register h2 {
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.register form label {
   display: none;
 }
 
-form.register input {
+.register form input {
+  width: 100%;
+  margin: 0.5rem auto;
   padding: 0.5rem;
+  border: 2px solid #8c8c8c;
+}
+
+.register form button {
+  margin: 1rem auto;
   width: 100%;
 }
 
-form.register input.file-select::before {
+/* .register input.file-select::before {
   content: "Seleccionar archivo";
-}
+} */
 
 #avatar::before {
   content: "Your avatar  ";
 }
-/* 
-form.register input form.register button {
-  width: fit-content;
-  margin: auto;
-} */
