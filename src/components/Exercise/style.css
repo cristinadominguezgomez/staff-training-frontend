@@ -1,5 +1,4 @@
 .exercise {
-  /* padding: 0 1em; */
   margin-top: 2em;
 }
 
@@ -39,19 +38,19 @@
   color: white;
   text-transform: capitalize;
 }
-.exercise .like {
+
+.like {
   display: flex;
   align-items: center;
+  justify-content: right;
+  gap: 1.5rem;
 }
 
-.exercise .like img {
-  width: 1.5em;
-  cursor: pointer;
-
-
+.like img {
+  max-width: 2.5rem;
 }
 
-.exercise .like span {
+.like span {
   font-size: 1.5em;
   color: black;
   margin-left: 0.5em;

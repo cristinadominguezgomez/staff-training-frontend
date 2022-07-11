@@ -55,8 +55,8 @@ export const RegisterForm = () => {
 
   return (
     <>
-      <form className="register" onSubmit={handleForm}>
-        <legend>¿Are you employee and you don´t have an account yet?</legend>
+      <h2>Are you an employee and still don't have an account?</h2>
+      <form onSubmit={handleForm}>
         <fieldset>
           <label htmlFor="name">Name</label>
           <input
