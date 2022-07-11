@@ -15,7 +15,6 @@ export const EmployeePage = () => {
 
   return employeeContext && employeeContext.role === "admin" ? (
     <section className="employe">
-      <h2>Employee</h2>
       <Employee employee={employee} />
     </section>
   ) : (

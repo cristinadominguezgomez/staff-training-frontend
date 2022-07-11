@@ -2,6 +2,7 @@ section.employe article {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5em;
 }
 
 section.employe article div {

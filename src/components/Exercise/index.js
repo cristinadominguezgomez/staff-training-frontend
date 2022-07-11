@@ -69,7 +69,7 @@ export const Exercise = ({ exercise, removeExercise }) => {
                   alt={title}
                 />
               ) : (
-                <img src="/images/no-image.jpeg" alt="no-img" />
+                <img src="/images/carousel5.webp" alt="no-img" />
               )}
             </div>
           </Link>
