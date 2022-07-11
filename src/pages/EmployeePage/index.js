@@ -3,19 +3,21 @@ import { Employee } from "../../components/Employee";
 import { useContext } from "react";
 import { EmployeeTokenContext } from "../../context/EmployeeTokenContext";
 import useEmployee from "../../hooks/useEmployee";
+import useEmployees from "../../hooks/useEmployees";
 
 export const EmployeePage = () => {
   const { id } = useParams();
   const { employee: employeeContext } = useContext(EmployeeTokenContext);
   const { employee, loading, error } = useEmployee(id);
+  const { removeEmployee } = useEmployees();
 
-  if (loading) return <p>Cargando empleado...</p>;
+  if (loading) return <p>Loading employees...</p>;
 
   if (error) return <p>{error}</p>;
 
   return employeeContext && employeeContext.role === "admin" ? (
     <section className="employe">
-      <Employee employee={employee} />
+      <Employee employee={employee} removeEmployee={removeEmployee} />
     </section>
   ) : (
     <p>
